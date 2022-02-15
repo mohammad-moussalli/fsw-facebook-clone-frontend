@@ -1,5 +1,9 @@
 let signup_api = "http://localhost/fsw-facebook-clone-backend/PHP/signup-api.php";
 
+document.getElementById("creataccount_button").addEventListener("click", function(){
+    document.getElementById("signup_form").style.display;
+});
+
 const signUp = async (first_name, last_name, dob, email, password, profile_picture, country, city, street) => {
     const response = await fetch(signup_api, {
         method: "POST",
@@ -29,7 +33,7 @@ const signUp = async (first_name, last_name, dob, email, password, profile_pictu
     }
 };
 
-document.getElementById("createaccount_button").addEventListener("click", function(){
+document.getElementById("signup_button").addEventListener("click", function(){
     let first_name = document.getElementById("first_name").value;
     let last_name = document.getElementById("last_name").value;
     let dob = document.getElementById("dob").value;
