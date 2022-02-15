@@ -18,7 +18,15 @@ const addStatus = async (id, post) => {
     if (json_object.status == "Post added successfully"){
         post_id = json_object.post_id;
         timestamp = json_object.timestamp;
-        document.getElementById("feed").innerHTML += `<div class="posts" id="post_${post_id}">${post}<br/>${timestamp}</div>`;
+        document.getElementById("feed").innerHTML += 
+        `<div class="posts" id="post_${post_id}">${post}<br/>${timestamp}</div>`;
+        let btn = document.createElement("button");
+        btn.innerHTML = "Edit";
+        btn.type = "button";
+        btn.name = "formBtn";
+        btn.id =`edit_button${post_id}`;
+        btn.class ="buttons";
+        document.getElementById("feed").appendChild(btn);
     }else{
         console.log(json_object.status);
     }
