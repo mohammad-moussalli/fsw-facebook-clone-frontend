@@ -8,7 +8,7 @@ const signUp = async (first_name, last_name, dob, email, password, profile_pictu
     const response = await fetch(signup_api, {
         method: "POST",
         headers: new Headers({
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         })
         ,body: JSON.stringify({
             first_name: first_name,
@@ -22,7 +22,7 @@ const signUp = async (first_name, last_name, dob, email, password, profile_pictu
             street: street
         })
     });
-    const token = await response.json();
+    const json_object = await response.json();
     if (json_object.status == "Welcome to Facebook"){
         token = json_object.token;
         localStorage.setItem("id", token);
