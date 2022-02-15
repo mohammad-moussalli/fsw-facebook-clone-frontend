@@ -1,6 +1,6 @@
 let signup_api = "http://localhost/fsw-facebook-clone-backend/PHP/signup-api.php";
 
-document.getElementById("creataccount_button").addEventListener("click", function(){
+document.getElementById("createaccount_button").addEventListener("click", function(){
     document.getElementById("signup_form").style.display;
 });
 
@@ -37,8 +37,8 @@ document.getElementById("signup_button").addEventListener("click", function(){
     let first_name = document.getElementById("first_name").value;
     let last_name = document.getElementById("last_name").value;
     let dob = document.getElementById("dob").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    let email = document.getElementById("email2").value;
+    let password = document.getElementById("password2").value;
     let profile_picture = document.getElementById("profile_picture").value;
     let country = document.getElementById("country").value;
     let city = document.getElementById("city").value;
