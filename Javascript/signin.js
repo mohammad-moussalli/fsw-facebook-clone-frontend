@@ -15,7 +15,7 @@ const signIn = async (email, password) => {
     if (json_object.status == "Logged In"){
         token = json_object.token;
         localStorage.setItem("id", token);
-        location.href = "http://localhost/fsw-facebook-clone-frontend/HTML/homepage.html";
+        location.href = "http://localhost/fsw-facebook-clone-frontend/homepage.html";
         return token;
     }else{
         console.log(json_object.status);
