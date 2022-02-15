@@ -23,8 +23,8 @@ const signIn = async (email, password) => {
 }  
 
 document.getElementById("signin_button").addEventListener("click", function(){
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;   
+    let email = document.getElementById("email1").value;
+    let password = document.getElementById("password1").value;   
     signIn(email, password);
 });
 
