@@ -19,14 +19,22 @@ const addStatus = async (id, post) => {
         post_id = json_object.post_id;
         timestamp = json_object.timestamp;
         document.getElementById("feed").innerHTML += 
-        `<div class="posts" id="post_${post_id}">${post}<br/>${timestamp}</div>`;
-        let btn = document.createElement("button");
-        btn.innerHTML = "Edit";
-        btn.type = "button";
-        btn.name = "formBtn";
-        btn.id =`edit_button${post_id}`;
-        btn.class ="buttons";
-        document.getElementById("feed").appendChild(btn);
+        `<div class="posts" id="post_${post_id}">${post}</div>
+         <div class="timestamps" id="timestamp_${post_id}">${timestamp}</div>`;
+
+        let editbtn = document.createElement("button");
+        editbtn.innerHTML = "Edit";
+        editbtn.type = "button";
+        editbtn.id =`edit_button${post_id}`;
+        editbtn.class ="edit_buttons";
+        document.getElementById("feed").appendChild(editbtn);
+
+        let submitbtn = document.createElement("button");
+        submitbtn.innerHTML = "Submit";
+        submitbtn.type = "button";
+        submitbtn.id =`submit_button${post_id}`;
+        submitbtn.class ="submit_buttons";
+        document.getElementById("feed").appendChild(submitbtn);
     }else{
         console.log(json_object.status);
     }
