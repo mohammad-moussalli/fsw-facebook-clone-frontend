@@ -1,6 +1,6 @@
 let friendstatus_api = "http://localhost/fsw-facebook-clone-backend/PHP/friend-status-api.php";
 
-let id = localStorage.getItem("id");
+//let id = localStorage.getItem("id");
 
 const friendStatus = async (id) => {
     const response = await fetch(friendstatus_api, {
@@ -30,6 +30,14 @@ const friendStatus = async (id) => {
              <div class="posts" id="post_${post_id}">${post}</div>
              <div class="timestamps" id="timestamp_${post_id}">${timestamp}</div>`;
         }
+
+        let likebtn = document.createElement("button");
+            let counter = 0;
+            likebtn.innerHTML = `Likes ${counter}`;
+            likebtn.type = "button";
+            likebtn.id =`like_button${post_id}`;
+            likebtn.class ="like_buttons";
+            document.getElementById("feed").appendChild(likebtn);
     }
 };
 
