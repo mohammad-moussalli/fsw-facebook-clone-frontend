@@ -7,6 +7,7 @@ window.onload = () => {
   });
 
   document.getElementById("allfriends").addEventListener("click", (e) => {
+    e.preventDefault();
     getFriends(localStorage.getItem("token")).then(() => {
       document.querySelectorAll(".block-btn").forEach((button) => {
         let id = button.id.replace(/\D/g, "");
@@ -52,6 +53,13 @@ window.onload = () => {
         });
       });
     });
+  });
+
+  document.getElementById("home").addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.getItem("token");
+    console.log("test");
+    getStatuses(localStorage.getItem("token")).then(() => {});
   });
 
   /*addFriend(

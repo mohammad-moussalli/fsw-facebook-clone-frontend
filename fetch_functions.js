@@ -114,13 +114,13 @@ const getfriendRequests = async (sender) => {
     }),
   });
   const data = await response.json();
-  document.getElementById("friends").innerHTML = null;
+  document.getElementById("column-two").innerHTML = null;
   data.forEach((element) => {
     first_name = element.first_name.charAt(0).toUpperCase() + element.first_name.slice(1).toLowerCase();
     last_name = element.last_name.charAt(0).toUpperCase() + element.last_name.slice(1).toLowerCase();
     fullname = `${first_name} ${last_name}`;
     console.log("test");
-    document.getElementById("friends").innerHTML += `
+    document.getElementById("column-two").innerHTML += `
             <div class="friend-container">
                 <div class="friend-row">
                     <span class="fullname" id="full-name">${fullname}</span>
@@ -145,13 +145,13 @@ const getFriends = async (sender) => {
     }),
   });
   const data = await response.json();
-  document.getElementById("friends").innerHTML = null;
+  document.getElementById("column-two").innerHTML = null;
   console.log(data);
   data.forEach((element) => {
     first_name = element.first_name.charAt(0).toUpperCase() + element.first_name.slice(1).toLowerCase();
     last_name = element.last_name.charAt(0).toUpperCase() + element.last_name.slice(1).toLowerCase();
     fullname = `${first_name} ${last_name}`;
-    document.getElementById("friends").innerHTML += `
+    document.getElementById("column-two").innerHTML += `
             <div class="friend-container">
                 <div class="friend-row">
                     <span class="fullname" id="full-name">${fullname}</span>
@@ -177,13 +177,13 @@ const getblockedUsers = async (sender) => {
   });
 
   const data = await response.json();
-  document.getElementById("friends").innerHTML = null;
+  document.getElementById("column-two").innerHTML = null;
   data.forEach((element) => {
     first_name = element.first_name.charAt(0).toUpperCase() + element.first_name.slice(1).toLowerCase();
     last_name = element.last_name.charAt(0).toUpperCase() + element.last_name.slice(1).toLowerCase();
     fullname = `${first_name} ${last_name}`;
     console.log("test");
-    document.getElementById("friends").innerHTML += `
+    document.getElementById("column-two").innerHTML += `
             <div class="friend-container">
                 <div class="friend-row">
                     <span class="fullname" id="full-name">${fullname}</span>
@@ -192,6 +192,35 @@ const getblockedUsers = async (sender) => {
                     <button class="unblock-btn" id="${element.id}-unblock">Unblock</button>
                 </div>
             </div>`;
+  });
+  return data;
+};
+
+const getStatuses = async (sender) => {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/friendstatuses_api.php", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+    body: JSON.stringify({
+      sender: sender,
+    }),
+  });
+
+  const data = await response.json();
+  document.getElementById("column-two").innerHTML = null;
+  console.log("test");
+  data.forEach((element) => {
+    post = element.post;
+    first_name = element.first_name.charAt(0).toUpperCase() + element.first_name.slice(1).toLowerCase();
+    last_name = element.last_name.charAt(0).toUpperCase() + element.last_name.slice(1).toLowerCase();
+    fullname = `${first_name} ${last_name}`;
+
+    document.getElementById("column-two").innerHTML += `
+            <div class="status-container">
+                <div class="status-row">
+                    <span class="post-class" id="post">${post}</span>
+                </div>`;
   });
   return data;
 };
