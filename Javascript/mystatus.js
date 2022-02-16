@@ -12,13 +12,23 @@ const myStatus = async (id) => {
             id: id
         })
     });
-    const token = await response.json();
-    return token;
+    const json_object = await response.json();
+    if (json_object.status == "User not found"){
+        console.log(json_object.status);
+    }else{
+        post_id = json_object.post_id;
+        timestamp = json_object.timestamp;
+        
+        for(let i in json_object){
+            let post = json_object[i].post;
+            let timestamp = json_object[i].timestamp;
+            document.getElementById("feed").innerHTML += 
+            `<div class="posts" id="post_${post_id}">${post}</div>
+             <div class="timestamps" id="timestamp_${post_id}">${timestamp}</div>`;
+        }
+    }
 };
-if(myStatus(id) != null){
-    myStatus(id).then((data) => {
-        data.forEach((element) => {
-          document.getElementById("feed").innerHTML += `<div class="posts" id="post_${element.id}">${element}</div>`;
-        });                                             
-    });        
-};
+
+document.getElementById("profile_button").addEventListener("click",function(){
+    myStatus(id);
+});
