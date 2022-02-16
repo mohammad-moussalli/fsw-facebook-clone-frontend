@@ -25,21 +25,26 @@ const editStatus = async (post, id, post_id) => {
     }
 };
 
-document.querySelectorAll("edit_buttons").forEach((button) => {
-    let post_id = button.id.replace(/\D/g, "");
-    console.log(post_id);
-    document.getElementById(button.id).addEventListener("click", function(){
-        let post = document.getElementById(`post_${id}`)
-        post.contentEditable = true;
-        let id = localStorage.getItem("id");
-        editStatus(post, id, post_id);
-    });
+    let edit_buttons = document.getElementsByClassName("edit_buttons");
+    for(let i = 0; i<edit_buttons.length; i++){
+        let button_id = edit_buttons[i].id;
+        let post_id = button_id.replace(/\D/g, "");
+        document.getElementById(post_id)
+        document.getElementById("button_id").addEventListener("click", function(){
+            let post = document.getElementById(`post_${post_id}`)
+            post.contentEditable = true;
+            let id = localStorage.getItem("id");
+            editStatus(post, id, post_id);
+        })
+    }
 
-});
-
-document.querySelectorAll("submit_buttons").forEach((button) => {
-    document.getElementById(button.id).addEventListener("click", function(){
-        edited_post.contentEditable = false;
-    });
-});
+    let submit_buttons = document.getElementsByClassName("submit_buttons");
+    for(let i = 0; i<submit_buttons.length; i++){
+        let button_id = submit_buttons[i].id;
+        let post_id = button_id.replace(/\D/g, "");
+        let edited_post = document.getElementById(post_id);
+        document.getElementById("button_id").addEventListener("click", function(){
+            edited_post.contentEditable = false;
+        })
+    }
    
