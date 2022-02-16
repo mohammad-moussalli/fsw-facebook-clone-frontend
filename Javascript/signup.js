@@ -4,7 +4,7 @@ document.getElementById("createaccount_button").addEventListener("click", functi
     document.getElementById("signup_form").style.display;
 });
 
-const signUp = async (first_name, last_name, dob, email, password, profile_picture, country, city, street) => {
+const signUp = async (first_name, last_name, dob, email, password, country, city, street) => {
     const response = await fetch(signup_api, {
         method: "POST",
         headers: new Headers({
@@ -16,7 +16,6 @@ const signUp = async (first_name, last_name, dob, email, password, profile_pictu
             dob: dob,
             email: email,
             password: password,
-            profile_picture: profile_picture,
             country: country,
             city: city,
             street: street
@@ -39,10 +38,25 @@ document.getElementById("signup_button").addEventListener("click", function(){
     let dob = document.getElementById("dob").value;
     let email = document.getElementById("email2").value;
     let password = document.getElementById("password2").value;
-    let profile_picture = document.getElementById("profile_picture").value;
     let country = document.getElementById("country").value;
     let city = document.getElementById("city").value;
     let street = document.getElementById("street").value;  
-    signUp(first_name, last_name, dob, email, password, profile_picture, country, city, street);
+    signUp(first_name, last_name, dob, email, password, country, city, street);
 });
 
+document.getElementById("createaccount_button").addEventListener("click", function(){
+    let signup = document.getElementById("signup_form");
+    let body = document.getElementsByClassName("maincontainer")[0];
+    body.zIndex = "1";
+    signup.style.display ="flex";
+    body.style.zIndex = 1;
+    body.style.opacity = "0.2";
+});
+
+document.getElementById("close_button").addEventListener("click", function(){
+    let signup = document.getElementById("signup_form");
+    signup.style.display ="none";
+    let body = document.getElementsByClassName("maincontainer")[0];
+    body.style.opacity = "1";
+
+});
