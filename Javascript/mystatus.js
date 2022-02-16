@@ -9,7 +9,7 @@ const myStatus = async (id) => {
             "Content-Type": "application/json"
         })
         ,body: JSON.stringify({
-            id: id
+            sender: sender
         })
     });
     const json_object = await response.json();
