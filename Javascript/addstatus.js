@@ -35,6 +35,14 @@ const addStatus = async (id, post) => {
         submitbtn.id =`submit_button${post_id}`;
         submitbtn.class ="submit_buttons";
         document.getElementById("feed").appendChild(submitbtn);
+
+        let likebtn = document.createElement("button");
+        let counter = 0;
+        likebtn.innerHTML = `Likes ${counter}`;
+        likebtn.type = "button";
+        likebtn.id =`like_button${post_id}`;
+        likebtn.class ="like_buttons";
+        document.getElementById("feed").appendChild(likebtn);
     }else{
         console.log(json_object.status);
     }
