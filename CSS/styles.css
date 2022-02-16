@@ -171,31 +171,71 @@ input[type=text] {
 }
 
 #first_name{
-    width: 50%;
 }
 #last_name{
-    width: 50%;
 }
 #email2{
-    width: auto;
 }
 #password2{
-    width: auto;
 }
 #dob{
-    width: auto;
 }
 #country{
-    width: auto;
 }
 #city{
-    width: auto;
 }
 #street{
-    width: auto;
 }
 .input{
-    width: 100%;
+}
+
+#signup_button{
+    background-color: #42b72a;
+    color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    margin: 15px;
+    width: 130px;
+    padding: 10px 20px;
+    font-family: Ubuntu;
+    font-size: larger;
+    font-weight: 400;
+}
+
+#signup_button:hover{
+    background-color: #3eac28;
+}
+
+#close_button{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    margin: 15px;
+    width: 130px;
+    padding: 0px 20px;
+    font-family: Ubuntu;
+    font-size: larger;
+    font-weight: 400;
+}
+
+#close_button:hover{
+    background-color: #d70000;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup{
+    
 }
 
 @media only screen and (max-width:1300px){
