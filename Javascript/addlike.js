@@ -9,7 +9,7 @@ const addLike = async (id, post) => {
             "Content-Type": "application/json"
         })
         ,body: JSON.stringify({
-            user_id: id,
+            sender: sender,
             post_id: post
         })
     });
@@ -22,10 +22,23 @@ const addLike = async (id, post) => {
             let innerHTML = document.getElementById(`like_button${post_id}`).innerHTML;
             let counter = innerHTML.replace(/\D/g, "");
             counter += 1;
-            document.getElementById(`like_button${post_id}`).innerHTML = `Likes${counter}`;
+            document.getElementById(`like_button${post_id}`).innerHTML = `Likes ${counter}`;
             });   
         }else{
             console.log(json_object.status);
         }
+
+        let like_buttons = document.getElementsByClassName("like_buttons");
+        for(let i = 0; i<like_buttons.length; i++){
+            let button_id = like_buttons[i].id;
+            let post_id = button_id.replace(/\D/g, "");
+            console.log(post_id);
+            console.log(button_id);
+            document.getElementById("button_id").addEventListener("click", function(){
+            let post = document.getElementById(`post_${post_id}`)
+            let id = localStorage.getItem("id");
+            editStatus(id, post_id);
+        })
+    }
  
 };
