@@ -26,7 +26,7 @@ const signUp = async (first_name, last_name, dob, email, password, profile_pictu
     if (json_object.status == "Welcome to Facebook"){
         token = json_object.token;
         localStorage.setItem("id", token);
-        location.href = "http://localhost/fsw-facebook-clone-frontend/HTML/homepage.html";
+        location.href = "http://localhost/fsw-facebook-clone-frontend/homepage.html";
         return token;
     }else{
         console.log(json_object.status);
