@@ -8,7 +8,7 @@ const addStatus = async (id, post) => {
             "Content-Type": "application/json"
         })
         ,body: JSON.stringify({
-            id: id,
+            sender: sender,
             post: post
         })
     });
