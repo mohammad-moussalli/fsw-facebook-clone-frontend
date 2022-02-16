@@ -1,4 +1,4 @@
-let editstatus_api = "http://localhost/fsw-facebook-clone-backend/PHP/edit-status-api.php";
+let editstatus_api = "http://localhost/fsw-facebook-clone-backend/php/edit-status-api.php";
 
 const editStatus = async (post, id, post_id) => {
     const response = await fetch(editstatus_api, {

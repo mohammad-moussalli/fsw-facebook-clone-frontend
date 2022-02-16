@@ -1,4 +1,4 @@
-let userdata_api = "http://localhost/fsw-facebook-clone-backend/PHP/userdata-api.php";
+let userdata_api = "http://localhost/fsw-facebook-clone-backend/php/userdata-api.php";
 
 let id = localStorage.getItem("id");
 

@@ -1,4 +1,4 @@
-let getlike_api = "http://localhost/fsw-facebook-clone-backend/PHP/likes-api.php";
+let getlike_api = "http://localhost/fsw-facebook-clone-backend/php/likes-api.php";
 
 let post_id = document.getElementById(`post_${post_id}`);
 

@@ -1,4 +1,4 @@
-let friendstatus_api = "http://localhost/fsw-facebook-clone-backend/PHP/friend-status-api.php";
+let friendstatus_api = "http://localhost/fsw-facebook-clone-backend/php/friend-status-api.php";
 
 //let id = localStorage.getItem("id");
 

@@ -1,4 +1,4 @@
-let addstatus_api = "http://localhost/fsw-facebook-clone-backend/PHP/status-api.php";
+let addstatus_api = "http://localhost/fsw-facebook-clone-backend/php/status-api.php";
 
 const addStatus = async (id, post) => {
     

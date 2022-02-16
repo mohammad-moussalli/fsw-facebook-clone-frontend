@@ -1,4 +1,4 @@
-let signin_api = "http://localhost/fsw-facebook-clone-backend/PHP/signin-api.php";
+let signin_api = "http://localhost/fsw-facebook-clone-backend/php/signin-api.php";
 
 const signIn = async (email, password) => {
     const response = await fetch(signin_api, {

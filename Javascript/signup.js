@@ -1,4 +1,4 @@
-let signup_api = "http://localhost/fsw-facebook-clone-backend/PHP/signup-api.php";
+let signup_api = "http://localhost/fsw-facebook-clone-backend/php/signup-api.php";
 
 document.getElementById("createaccount_button").addEventListener("click", function(){
     document.getElementById("signup_form").style.display;
