@@ -8,7 +8,7 @@ const editStatus = async (post, id, post_id) => {
         })
         ,body: JSON.stringify({
             post: post,
-            user_id: id,
+            sender: sender,
             post_id: post_id
         })
     });
