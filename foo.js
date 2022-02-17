@@ -98,6 +98,8 @@ window.onload = () => {
     });
   });
 
+  document.getElementById("file-input").addEventListener("onchange", () => {});
+
   /*addFriend(
     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjEzNTY5OTk1MjQsIm5iZiI6MTM1NzAwMDAwMCwiaWQiOjZ9.jLFdDS2tMoMCiIA89e7NAx1YRoxWBiOVJl5j0szPiZk",
     "2"

@@ -329,3 +329,7 @@ li a {
   right: 2rem;
   bottom: 0.2rem;
 }
+
+.image-upload > input {
+  display: none;
+}
