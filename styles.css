@@ -100,7 +100,7 @@ li a {
   display: flex;
   flex-direction: column;
   flex: 40%;
-  padding: 20px;
+  padding: 30px;
   position: relative;
   background-color: #ffff;
 }
@@ -173,7 +173,7 @@ li a {
 .sidenav-item {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .sidenav-text {
