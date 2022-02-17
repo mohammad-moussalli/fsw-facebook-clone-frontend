@@ -46,12 +46,19 @@ document.getElementById("signup_button").addEventListener("click", function(){
 
 document.getElementById("createaccount_button").addEventListener("click", function(){
     let signup = document.getElementById("signup_form");
-    let body = document.getElementsByClassName("maincontainer")[0];
+    let maincontainer = document.getElementsByClassName("maincontainer")[0];
     body.zIndex = "1";
     signup.style.display ="flex";
-    body.style.zIndex = 1;
-    body.style.opacity = "0.2";
+    maincontainer.style.zIndex = 1;
+    maincontainer.style.opacity = "0.2";
+    let body = document.getElementsByTagName("body")[0];
+    body.style.display="flex";
+    body.style.alignItems="center";
+    body.style.justifyContent="center";
+    body.style.minHeight="100vh";
+
 });
+
 
 document.getElementById("close_button").addEventListener("click", function(){
     let signup = document.getElementById("signup_form");
