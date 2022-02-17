@@ -1,8 +1,8 @@
-let friendstatus_api = "http://localhost/fsw-facebook-clone-backend/php/friend-status-api.php";
+let friendstatus_api = "http://localhost/fsw-facebook-clone-backend/php/friend_status-api.php";
 
-//let id = localStorage.getItem("id");
+let id = localStorage.getItem("token");
 
-const friendStatus = async (id) => {
+const friendStatus = async (sender) => {
     const response = await fetch(friendstatus_api, {
         method: "POST",
         headers: new Headers({

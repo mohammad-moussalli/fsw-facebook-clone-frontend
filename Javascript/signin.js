@@ -1,4 +1,4 @@
-let signin_api = "http://localhost/fsw-facebook-clone-backend/php/signin-api.php";
+let signin_api = "http://localhost/fsw-facebook-clone-backend/php/signin_api.php";
 
 const signIn = async (email, password) => {
     const response = await fetch(signin_api, {
@@ -14,8 +14,8 @@ const signIn = async (email, password) => {
     const json_object = await response.json();
     if (json_object.status == "Logged In"){
         token = json_object.token;
-        localStorage.setItem("id", token);
-        location.href = "http://localhost/fsw-facebook-clone-frontend/homepage.html";
+        localStorage.setItem("token", token);
+        location.href = "http://localhost/fsw-facebook-clone-frontend/home.html";
         return token;
     }else{
         console.log(json_object.status);

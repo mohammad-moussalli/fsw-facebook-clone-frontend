@@ -1,8 +1,8 @@
-let mystatus_api = "http://localhost/fsw-facebook-clone-backend/php/mystatus-api.php";
+let mystatus_api = "http://localhost/fsw-facebook-clone-backend/php/mystatus_api.php";
 
-let id = localStorage.getItem("id");
+let id = localStorage.getItem("token");
 
-const myStatus = async (id) => {
+const myStatus = async (sender) => {
     const response = await fetch(mystatus_api, {
         method: "POST",
         headers: new Headers({
