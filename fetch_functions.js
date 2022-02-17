@@ -301,7 +301,7 @@ const searchUsers = async (sender, name) => {
 };
 
 const updatePIC = async (sender, picture) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/addfriend_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/profilepic_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
