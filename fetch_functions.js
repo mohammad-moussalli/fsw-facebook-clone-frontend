@@ -299,3 +299,17 @@ const searchUsers = async (sender, name) => {
   });
   return data;
 };
+const updatePIC = async (sender, picture) => {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/profilepic_api.php", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+    body: JSON.stringify({
+      sender: sender,
+      picture: picture,
+    }),
+  });
+  const data = await response.json();
+  return data;
+};
