@@ -1,6 +1,6 @@
-let addstatus_api = "http://localhost/fsw-facebook-clone-backend/php/status-api.php";
+let addstatus_api = "http://localhost/fsw-facebook-clone-backend/php/status_api.php";
 
-const addStatus = async (id, post) => {
+const addStatus = async (sender, post) => {
     
     const response = await fetch(addstatus_api, {
         method: "POST",
@@ -49,7 +49,7 @@ const addStatus = async (id, post) => {
 };
 
     document.getElementById("post_button").addEventListener("click", function(){
-        let id = localStorage.getItem("id");
+        let token = localStorage.getItem("token");
         let post = document.getElementById("post_status").value;  
-        addStatus(id, post);
+        addStatus(token, post);
     });

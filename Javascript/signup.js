@@ -1,4 +1,4 @@
-let signup_api = "http://localhost/fsw-facebook-clone-backend/php/signup-api.php";
+let signup_api = "http://localhost/fsw-facebook-clone-backend/php/signup_api.php";
 
 document.getElementById("createaccount_button").addEventListener("click", function(){
     document.getElementById("signup_form").style.display;
@@ -24,8 +24,8 @@ const signUp = async (first_name, last_name, dob, email, password, country, city
     const json_object = await response.json();
     if (json_object.status == "Welcome to Facebook"){
         token = json_object.token;
-        localStorage.setItem("id", token);
-        location.href = "http://localhost/fsw-facebook-clone-frontend/homepage.html";
+        localStorage.setItem("token", token);
+        location.href = "http://localhost/fsw-facebook-clone-frontend/home.html";
         return token;
     }else{
         console.log(json_object.status);
@@ -47,7 +47,7 @@ document.getElementById("signup_button").addEventListener("click", function(){
 document.getElementById("createaccount_button").addEventListener("click", function(){
     let signup = document.getElementById("signup_form");
     let maincontainer = document.getElementsByClassName("maincontainer")[0];
-    body.zIndex = "1";
+    maincontainer.zIndex = "1";
     signup.style.display ="flex";
     maincontainer.style.zIndex = 1;
     maincontainer.style.opacity = "0.2";

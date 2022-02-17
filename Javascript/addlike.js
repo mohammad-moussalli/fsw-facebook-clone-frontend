@@ -1,8 +1,8 @@
-let addlike_api = "http://localhost/fsw-facebook-clone-backend/php/addlike-api.php";
+let addlike_api = "http://localhost/fsw-facebook-clone-backend/php/addlike_api.php";
 
 //let id = localStorage.getItem("id");
 
-const addLike = async (id, post) => {
+const addLike = async (sender, post) => {
     const response = await fetch(addlike_api, {
         method: "POST",
         headers: new Headers({

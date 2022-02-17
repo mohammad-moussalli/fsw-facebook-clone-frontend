@@ -1,15 +1,14 @@
 window.onload = () => {
-  signIn("saad@saad.saad", "saadSaad1").then((data) => {
+  signIn("saad@saad.saad", "Wamrmrjham$92").then((data) => {
     //console.log(data.token);
     token = data.token;
-    console.log(data);
     localStorage.setItem("token", token);
   });
 
   getData(localStorage.getItem("token")).then((data) => {
     console.log(data[0].picture);
     let str = data[0].picture;
-    console.log(str);
+    //console.log(str);
     first_name = data[0].first_name.charAt(0).toUpperCase() + data[0].first_name.slice(1).toLowerCase();
     last_name = data[0].last_name.charAt(0).toUpperCase() + data[0].last_name.slice(1).toLowerCase();
     fullname = `${first_name} ${last_name}`;
@@ -105,4 +104,9 @@ window.onload = () => {
     //console.log(data.token);
     console.log(data);
   });*/
+
+  document.getElementById("logout").addEventListener("click", function(){
+    location.href = "http://localhost/fsw-facebook-clone-frontend/index.html";
+  });
 };
+

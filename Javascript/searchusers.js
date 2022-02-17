@@ -1,8 +1,8 @@
 let searchusers_api = "http://localhost/fsw-facebook-clone-backend/php/searchforuses_api.php";
 
-let id = localStorage.getItem("id");
+let id = localStorage.getItem("token");
 
-const myData = async (id) => {
+const myData = async (sender, first_name, last_name) => {
     const response = await fetch(searchusers_api, {
         method: "POST",
         headers: new Headers({

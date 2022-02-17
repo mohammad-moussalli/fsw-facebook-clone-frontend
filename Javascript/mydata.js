@@ -1,8 +1,8 @@
-let userdata_api = "http://localhost/fsw-facebook-clone-backend/php/userdata-api.php";
+let userdata_api = "http://localhost/fsw-facebook-clone-backend/php/userdata_api.php";
 
-let id = localStorage.getItem("id");
+let id = localStorage.getItem("token");
 
-const myData = async (id) => {
+const myData = async (sender) => {
     const response = await fetch(userdata_api, {
         method: "POST",
         headers: new Headers({
@@ -38,5 +38,5 @@ const myData = async (id) => {
 };
 
 document.getElementById("profile_button").addEventListener("click",function(){
-    myStatus(id);
+    myData(id);
 });
