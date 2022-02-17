@@ -1,5 +1,5 @@
 const signIn = async (email, password) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/login_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/signin_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -14,7 +14,7 @@ const signIn = async (email, password) => {
 };
 
 const addFriend = async (sender, receiver) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/addfriend_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/addfriend_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const addFriend = async (sender, receiver) => {
 };
 
 const removeFriend = async (sender, receiver) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/removefriend_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/removefriend_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const removeFriend = async (sender, receiver) => {
 };
 
 const blockFriend = async (sender, receiver) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/blockfriend_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/blockfriend_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const blockFriend = async (sender, receiver) => {
 };
 
 const unblockFriend = async (sender, receiver) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/unblockfriend_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/unblockfriend_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const unblockFriend = async (sender, receiver) => {
 };
 
 const acceptRequest = async (sender, receiver) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/acceptfriend_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/acceptfriend_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -89,7 +89,7 @@ const acceptRequest = async (sender, receiver) => {
 };
 
 const rejectRequest = async (sender, receiver) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/rejectrequest_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/rejectrequest_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const rejectRequest = async (sender, receiver) => {
 };
 
 const getfriendRequests = async (sender) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/getfriendrequests_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/getfriendrequests_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -123,6 +123,7 @@ const getfriendRequests = async (sender) => {
     document.getElementById("column-two").innerHTML += `
             <div class="friend-container">
                 <div class="friend-row">
+                    <img class="friend-img" src=${element.picture}>
                     <span class="fullname" id="full-name">${fullname}</span>
                 </div>
                 <div class="button-row">
@@ -135,7 +136,7 @@ const getfriendRequests = async (sender) => {
 };
 
 const getFriends = async (sender) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/getfriends_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/getfriends_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -154,6 +155,7 @@ const getFriends = async (sender) => {
     document.getElementById("column-two").innerHTML += `
             <div class="friend-container">
                 <div class="friend-row">
+                    <img class="friend-img" src=${element.picture}>
                     <span class="fullname" id="full-name">${fullname}</span>
                 </div>
                 <div class="button-row">
@@ -166,7 +168,7 @@ const getFriends = async (sender) => {
 };
 
 const getblockedUsers = async (sender) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/getblockedusers_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/getblockedusers_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -186,6 +188,7 @@ const getblockedUsers = async (sender) => {
     document.getElementById("column-two").innerHTML += `
             <div class="friend-container">
                 <div class="friend-row">
+                    <img class="friend-img" src=${element.picture}>
                     <span class="fullname" id="full-name">${fullname}</span>
                 </div>
                 <div class="button-row">
@@ -197,7 +200,7 @@ const getblockedUsers = async (sender) => {
 };
 
 const getStatuses = async (sender) => {
-  const response = await fetch("http://localhost/fsw-facebook-clone-backend/friendstatuses_api.php", {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/friend_status_api.php", {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -218,9 +221,81 @@ const getStatuses = async (sender) => {
 
     document.getElementById("column-two").innerHTML += `
             <div class="status-container">
+              <div class="friend-row-status">
+                    <img class="friend-img" src=${element.picture}>
+                    <span class="fullname" id="full-name">${fullname}</span>
+                </div>
                 <div class="status-row">
                     <span class="post-class" id="post">${post}</span>
-                </div>`;
+                
+                 <div class="time-row">${element.timestamp}</div>`;
+  });
+  return data;
+};
+
+let userdata_api = "http://localhost/fsw-facebook-clone-backend/php/userdata_api.php";
+let id = localStorage.getItem("id");
+const getData = async (sender) => {
+  const response = await fetch(userdata_api, {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+    body: JSON.stringify({
+      sender: sender,
+    }),
+  });
+  const json_object = await response.json();
+  if (json_object.status == "User not found") {
+    console.log(json_object.status);
+  } else {
+    /*for (let i in json_object) {
+      let first_name = json_object[i].first_name;
+      let last_name = json_object[i].last_name;
+      let dob = json_object[i].dob;
+      let email = json_object[i].email;
+      let picture = json_object[i].picture;
+      let country = json_object[i].country;
+      let city = json_object[i].city;
+      let street = json_object[i].street;
+      document.getElementById("profile_data").innerHTML += `<div class="data" id="name">${first_name} ${last_name}</div>
+             <div class="data" id="dob">${dob}</div>;
+             <div class="data" id="email">${email}</div>;
+             <div class="data" id="picture">${picture}</div>;
+             <div class="data" id="country">${country}</div>;
+             <div class="data" id="city">${city}</div>;
+             <div class="data" id="street">${street}</div>`;*/
+    return json_object;
+  }
+};
+const searchUsers = async (sender, name) => {
+  const response = await fetch("http://localhost/fsw-facebook-clone-backend/php/searchforusers_api.php", {
+    method: "POST",
+    headers: new Headers({
+      "Content-Type": "application/json",
+    }),
+    body: JSON.stringify({
+      sender: sender,
+      name: name,
+    }),
+  });
+  const data = await response.json();
+  document.getElementById("column-two").innerHTML = null;
+  console.log(data);
+  data.forEach((element) => {
+    first_name = element.first_name.charAt(0).toUpperCase() + element.first_name.slice(1).toLowerCase();
+    last_name = element.last_name.charAt(0).toUpperCase() + element.last_name.slice(1).toLowerCase();
+    fullname = `${first_name} ${last_name}`;
+    document.getElementById("column-two").innerHTML += `
+            <div class="friend-container">
+                <div class="friend-row">
+                    <img class="friend-img" src=${element.picture}>
+                    <span class="fullname" id="full-name">${fullname}</span>
+                </div>
+                <div class="button-row">
+                    <button class="add-btn" id="${element.id}-add">Add</button>
+                </div>
+            </div>`;
   });
   return data;
 };
