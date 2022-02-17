@@ -159,7 +159,7 @@ input[type=text] {
     box-shadow: 5px 5px 10px #d0d2d5;
     z-index: 2;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 25%;
     opacity: 1 !important;
 }
@@ -250,6 +250,10 @@ input[type=text] {
     #loginform{
         width: 345px;
     }
+
+    #signup_form{
+        left: 22%;
+    }
 }
 
 @media only screen and (max-width:1200px){
@@ -265,6 +269,10 @@ input[type=text] {
     #loginform{
         width: 340px;
     }
+
+    #signup_form{
+        left: 19%;
+    }
 }
 @media only screen and (max-width:1100px){
 
@@ -278,6 +286,10 @@ input[type=text] {
 
     #loginform{
         width: 335px;
+    }
+
+    #signup_form{
+        left: 15%;
     }
 }
 @media only screen and (max-width:1000px){
@@ -293,6 +305,11 @@ input[type=text] {
     #loginform{
         width: 330px;
     }
+
+    #signup_form{
+        left: 10%;
+    }
+
 }
 
 @media only screen and (max-width:900px){
@@ -316,5 +333,39 @@ input[type=text] {
     #loginform{
     width: 500px;
     margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width:850px){
+
+    #signup_form{
+    width: 550px;
+    left:9%;
+    }
+}
+
+@media only screen and (max-width:800px){
+
+    #signup_form{
+    width: 500px;
+    left:7%;
+
+    }
+}
+
+@media only screen and (max-width:750px){
+
+    #signup_form{
+    width: 450px;
+    left:6%;
+
+    }
+}
+
+@media only screen and (max-width:550px){
+
+    #signup_form{
+    width: 400px;
+    left:5%;
     }
 }
