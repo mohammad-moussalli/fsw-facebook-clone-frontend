@@ -1,14 +1,8 @@
 window.onload = () => {
-  signIn("saad@saad.saad", "Wamrmrjham$92").then((data) => {
-    //console.log(data.token);
-    token = data.token;
-    localStorage.setItem("token", token);
-  });
 
   getData(localStorage.getItem("token")).then((data) => {
     console.log(data[0].picture);
     let str = data[0].picture;
-    //console.log(str);
     first_name = data[0].first_name.charAt(0).toUpperCase() + data[0].first_name.slice(1).toLowerCase();
     last_name = data[0].last_name.charAt(0).toUpperCase() + data[0].last_name.slice(1).toLowerCase();
     fullname = `${first_name} ${last_name}`;
@@ -86,7 +80,6 @@ window.onload = () => {
   document.getElementById("searchsubmit").addEventListener("click", (e) => {
     e.preventDefault();
     let input = document.getElementById("searchinput").value;
-    //input = input.replace(/\s+/g, " ").trim();
     searchUsers(localStorage.getItem("token"), input).then(() => {
       document.querySelectorAll(".add-btn").forEach((button) => {
         let id = button.id.replace(/\D/g, "");
@@ -97,15 +90,8 @@ window.onload = () => {
     });
   });
 
-  /*addFriend(
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjEzNTY5OTk1MjQsIm5iZiI6MTM1NzAwMDAwMCwiaWQiOjZ9.jLFdDS2tMoMCiIA89e7NAx1YRoxWBiOVJl5j0szPiZk",
-    "2"
-  ).then((data) => {
-    //console.log(data.token);
-    console.log(data);
-  });*/
-
   document.getElementById("logout").addEventListener("click", function(){
+    localStorage.clear();
     location.href = "http://localhost/fsw-facebook-clone-frontend/index.html";
   });
 };
